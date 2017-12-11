@@ -10,7 +10,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  template: `
+  <ion-tabs>
+    <ion-tab tabIcon="map" tabTitle="Plattegrond" [root]="tab1"></ion-tab>
+    <ion-tab tabIcon="search" tabTitle="Bedrijven" [root]="tab2"></ion-tab>
+  </ion-tabs>`
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -19,6 +24,9 @@ export class MyApp {
   rootPage = GroundPlan;
   pages: Array<{title: string, component: any}>;
 
+  tab1: any;
+  tab2: any;
+
   constructor(
     public platform: Platform,
     public menu: MenuController,
@@ -26,6 +34,9 @@ export class MyApp {
     public splashScreen: SplashScreen
   ) {
     this.initializeApp();
+
+    this.tab1 = GroundPlan;
+    this.tab2 = ListPage;
 
     // set our app's pages
     this.pages = [
@@ -49,4 +60,5 @@ export class MyApp {
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }
+
 }

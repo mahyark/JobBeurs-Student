@@ -41,7 +41,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Plattegrond', component: GroundPlan },
-      { title: 'My First List', component: ListPage }
+      { title: 'Bedrijven', component: ListPage }
     ];
   }
 

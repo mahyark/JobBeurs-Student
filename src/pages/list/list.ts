@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
 import * as $ from 'jquery';
 
@@ -9,30 +9,18 @@ import * as $ from 'jquery';
 })
 
 export class ListPage {
-  icons: string[];
   items: Array<{Bedrijf: string, E_mail: string, Contact: string, Adres: string, Post: string, Gemeente: string, Telefoon: string, Standnr: number, Sector: string, Opleiding: string, groen: string, geel: string, rood: string, blauw: string, wit: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
-    this.presentLoading();
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.initializeItems();
   }
 
   initializeItems() {
     this.getBedrijven();
     this.items = JSON.parse(localStorage.getItem('bedrijven'));
-  } 
-
-  presentLoading() {
-    if(localStorage.getItem('bedrijven') == null){
-      let loader = this.loadingCtrl.create({
-        content: "Even geduld...",
-        duration: 1000
-      });
-      loader.present();
-    }
   }
 
-  async getBedrijven() {
+  getBedrijven() {
     var url_s = 'https://defourstijn.cloudant.com/bedrijven/65377d850d363f7336e28f83f0a0729b';
 		$.get(
 				url_s,

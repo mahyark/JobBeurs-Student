@@ -7,8 +7,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content onload="initializeItems()">
+<ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-spinner name="circles" *ngIf="item == 0"></ion-spinner>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       {{item.Bedrijf}}

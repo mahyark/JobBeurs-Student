@@ -9,6 +9,20 @@
 
 <ion-content>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-list>
+  <ion-item>
+    <ion-label>Opleidingen</ion-label>
+    <ion-select [(ngModel)]="opleidingen" multiple="true" cancelText="Cancel" okText="Ok">
+      <ion-option value="Bedrijfsmanagement">Bedrijfsmanagement</ion-option>
+      <ion-option value="OfficeManagement">OfficeManagement</ion-option>
+      <ion-option value="Communicatie">Communicatie</ion-option>
+      <ion-option value="geel">ICT Multimedia</ion-option>
+      <ion-option value="wit">Wit</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
   <ion-spinner name="circles" *ngIf="item == 0"></ion-spinner>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">

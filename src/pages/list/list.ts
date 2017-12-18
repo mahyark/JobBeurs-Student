@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
+import { LoadingController } from 'ionic-angular';
 import * as $ from 'jquery';
 
 @Component({
@@ -19,6 +20,14 @@ export class ListPage {
   initializeItems() {
     this.getBedrijven();
     this.items = JSON.parse(localStorage.getItem('bedrijven'));
+  } 
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Even geduld...",
+      duration: 4000
+    });
+    loader.present();
   }
 
   async getBedrijven() {

@@ -22,7 +22,7 @@ export class GroundPlan {
 	presentToast() {
 	    let toast = this.toastCtrl.create({
 	      position: 'top',
-	      message: 'Tap op het plattegrond om te zoomen',
+	      message: 'Tap op de plattegrond om te vergroten',
 	      duration: 6000
 	    });
 	    toast.present();

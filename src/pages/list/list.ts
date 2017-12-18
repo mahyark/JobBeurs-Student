@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
-import { LoadingController } from 'ionic-angular';
 import * as $ from 'jquery';
 
 @Component({
@@ -14,6 +13,7 @@ export class ListPage {
   items: Array<{Bedrijf: string, E_mail: string, Contact: string, Adres: string, Post: string, Gemeente: string, Telefoon: string, Standnr: number, Sector: string, Opleiding: string, groen: string, geel: string, rood: string, blauw: string, wit: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+    this.presentLoading();
     this.initializeItems();
   }
 
@@ -23,11 +23,13 @@ export class ListPage {
   } 
 
   presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Even geduld...",
-      duration: 4000
-    });
-    loader.present();
+    if(localStorage.getItem('bedrijven') == null){
+      let loader = this.loadingCtrl.create({
+        content: "Even geduld...",
+        duration: 1000
+      });
+      loader.present();
+    }
   }
 
   async getBedrijven() {

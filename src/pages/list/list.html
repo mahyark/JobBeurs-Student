@@ -25,13 +25,14 @@
 
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <div style="margin-top: -6px">
+		<p *ngIf="item.Kleur != ''" style="border:1px solid #000;display:inline-block;position: absolute; margin:0 5px;"><span *ngFor="let kleur of item.Kleur"><span [style.backgroundColor]="kleur">&nbsp;</span></span></p>
 
-      <p *ngIf="item.Kleur != ''" style="border:1px solid #000;display:inline-block"><span *ngFor="let kleur of item.Kleur"><span [style.backgroundColor]="kleur">&nbsp;</span></span></p>
-
-      {{item.Bedrijf}}
-      <div class="item-note" item-right>
-        {{item.Standnr}}
-      </div>
+		<p style="display:inline-block; position: absolute; margin:0 24px;">{{item.Bedrijf}}</p>
+		<div style="position: absolute; right: 5px;">
+		{{item.Standnr}}
+		</div>
+  	</div>
     </button>
   </ion-list>
 </ion-content>

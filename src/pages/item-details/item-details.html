@@ -12,13 +12,14 @@
     {{selectedItem.Bedrijf}}
   </h3>
 
-    <h6 text-center *ngIf="selectedItem">
+    <h6 style="margin-left:10px" *ngIf="selectedItem">
     {{selectedItem.Opleiding}}
   </h6>
-<p text-center *ngIf="selectedItem">
+<p style="margin-left:10px" *ngIf="selectedItem">
     {{selectedItem.Sector}}
 </p>
-  <table style="width:100%">
+<br>
+  <table style="width:100%; margin-left:10px;">
   <tr>
     <th>e-mail:</th>
     <td>{{selectedItem.E_mail}}</td>

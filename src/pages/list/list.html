@@ -13,12 +13,18 @@
   <ion-list>
   <ion-item>
     <ion-label>Opleidingen</ion-label>
-    <ion-select [(ngModel)]="opleidingen" multiple="true" cancelText="Cancel" okText="Ok">
+    <ion-select (ionChange)="onOpleidingenChange($event)" [(ngModel)]="opleidingen" multiple="true" cancelText="Cancel" okText="Ok">
       <ion-option value="Bedrijfsmanagement">Bedrijfsmanagement</ion-option>
       <ion-option value="OfficeManagement">OfficeManagement</ion-option>
       <ion-option value="Communicatie">Communicatie</ion-option>
-      <ion-option value="geel">ICT Multimedia</ion-option>
-      <ion-option value="wit">Wit</ion-option>
+      <ion-option value="ICT Multimedia">ICT Multimedia</ion-option>
+      <ion-option value="Grafische en Digitale Media">Grafische en Digitale Media</ion-option>
+      <ion-option value="Wetenschappen">Wetenschappen</ion-option>
+      <ion-option value="Techniek">Techniek</ion-option>
+      <ion-option value="Toegepaste Informatica">Toegepaste Informatica</ion-option>
+      <ion-option value="Electronica ICT">Electronica ICT</ion-option>
+      <ion-option value="Gezondheid">Gezondheid</ion-option>
+      <ion-option value="Onderwijs">Onderwijs</ion-option>
     </ion-select>
   </ion-item>
 </ion-list>

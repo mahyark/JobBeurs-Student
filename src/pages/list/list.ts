@@ -78,4 +78,8 @@ export class ListPage {
       })
     }
   }
+
+  onOpleidingenChange() {
+    console.log("TESTJEEEUUU");
+  }
 }

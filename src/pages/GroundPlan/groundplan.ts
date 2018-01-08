@@ -7,7 +7,7 @@ import * as $ from 'jquery';
   templateUrl: 'groundplan.html'
 })
 export class GroundPlan {
-  items: Array<{Bedrijf: string, E_mail: string, Contact: string, Adres: string, Post: string, Gemeente: string, Telefoon: string, Standnr: number, Sector: string, Opleiding: string, groen: string, geel: string, rood: string, blauw: string, wit: string}>;
+  items: Array<{Bedrijf: string, E_mail: string, Contact: string, Adres: string, Post: string, Gemeente: string, Telefoon: string, Standnr: number, Sector: string, Opleiding: string, groen: string, geel: string, rood: string, blauw: string, wit: string, Kleur: Array<string>}>;
 
 	constructor(public toastCtrl: ToastController) {
 		this.presentToast();
@@ -40,13 +40,30 @@ export class GroundPlan {
           this.items = data_o.bedrijven;
           for(let i = 0; i < data_o.bedrijven.length; i++) {
             var Opleidingen = new Array();
-            if (this.items[i].groen=="WAAR"){Opleidingen.push("Bedrijfsmanagement Office Management Communicatie")};
-            if (this.items[i].geel=="WAAR"){Opleidingen.push("ICT Multimedia Grafische en Digitale Media")};
-            if (this.items[i].rood=="WAAR"){Opleidingen.push("Wetenschappen Techniek")};
-            if (this.items[i].blauw=="WAAR"){Opleidingen.push("Toegepaste Informatica Electronica ICT")};
-            if (this.items[i].wit=="WAAR"){Opleidingen.push("Gezondheid Onderwijs")};
+            var Kleuren = new Array();
+            if (this.items[i].groen=="WAAR"){
+              Opleidingen.push("Bedrijfsmanagement Office Management Communicatie");
+              Kleuren.push("green");
+            };
+            if (this.items[i].geel=="WAAR"){
+              Opleidingen.push("ICT Multimedia Grafische en Digitale Media");
+              Kleuren.push("yellow");
+            };
+            if (this.items[i].rood=="WAAR"){
+              Opleidingen.push("Wetenschappen Techniek");
+              Kleuren.push("red");
+            };
+            if (this.items[i].blauw=="WAAR"){
+              Opleidingen.push("Toegepaste Informatica Electronica ICT");
+              Kleuren.push("blue");
+            };
+            if (this.items[i].wit=="WAAR"){
+              Opleidingen.push("Gezondheid Onderwijs");
+              Kleuren.push("white");
+            };
 
             this.items[i].Opleiding = Opleidingen.toString();
+            this.items[i].Kleur = Kleuren;
             localStorage.setItem('bedrijven', JSON.stringify(this.items));
           }
 				}

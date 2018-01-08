@@ -13,6 +13,8 @@ export class ListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.initializeItems();
+    localStorage.setItem('searchVal', "");
+    localStorage.setItem('oplVal', "");
   }
 
   initializeItems() {
@@ -70,6 +72,7 @@ export class ListPage {
 
     // set val to the value of the searchbar
     let val = ev.target.value;
+    localStorage.setItem('searchVal', val);
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
@@ -77,9 +80,37 @@ export class ListPage {
         return (item.Bedrijf.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+
+    //Opleiding Filter
+    this.items = this.items.filter(item => this.filterOpleidingen(item.Opleiding,  localStorage.getItem('oplVal').split(",")));
   }
 
-  onOpleidingenChange() {
-    console.log("TESTJEEEUUU");
+  onOpleidingenChange(ctxt: string): void {
+    this.initializeItems();
+    localStorage.setItem('oplVal', ctxt.toString());
+
+    //Search Filter
+    let val = localStorage.getItem('searchVal');
+    if (val == null) {console.log("test")}
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.Bedrijf.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+
+    //Opleiding Filter
+    this.items = this.items.filter(item => this.filterOpleidingen(item.Opleiding, ctxt));
+  }
+
+  filterOpleidingen(opleidingen, ctxt) {
+      if (ctxt.length == 0) {
+        return true;
+      }
+      for (let opl of ctxt) {
+        if (!opleidingen.includes(opl)) {
+          return false;
+        }
+      }
+      return true;
   }
 }

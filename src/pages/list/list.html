@@ -15,7 +15,7 @@
     <ion-label>Opleidingen</ion-label>
     <ion-select (ionChange)="onOpleidingenChange($event)" [(ngModel)]="opleidingen" multiple="true" cancelText="Cancel" okText="Ok">
       <ion-option value="Bedrijfsmanagement">Bedrijfsmanagement</ion-option>
-      <ion-option value="OfficeManagement">OfficeManagement</ion-option>
+      <ion-option value="Office Management">Office Management</ion-option>
       <ion-option value="Communicatie">Communicatie</ion-option>
       <ion-option value="ICT Multimedia">ICT Multimedia</ion-option>
       <ion-option value="Grafische en Digitale Media">Grafische en Digitale Media</ion-option>
@@ -34,7 +34,7 @@
     <div style="margin-top: -6px">
 		<p *ngIf="item.Kleur != ''" style="border:1px solid #000;display:inline-block;position: absolute; margin:0 5px;"><span *ngFor="let kleur of item.Kleur"><span [style.backgroundColor]="kleur">&nbsp;</span></span></p>
 
-		<p style="display:inline-block; position: absolute; margin:0 24px;">{{item.Bedrijf}}</p>
+		<p style="display:inline-block; position: absolute; margin:0 27px;">{{item.Bedrijf}}</p>
 		<div style="position: absolute; right: 5px;">
 		{{item.Standnr}}
 		</div>

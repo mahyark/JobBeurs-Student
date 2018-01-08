@@ -26,7 +26,7 @@
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
 
-      <p *ngIf="item.Kleur != ''" style="border:1px solid #000;display:inline-block"><span *ngFor="let kleur of item.Kleur"><span [style.backgroundColor]="kleur">&nbsp;</span></span></p>
+      <p *ngIf="item.Kleur != ''" style="border:1px solid #000;display:inline-block;vertical-align: middle;"><span *ngFor="let kleur of item.Kleur"><span [style.backgroundColor]="kleur">&nbsp;</span></span></p>
 
       {{item.Bedrijf}}
       <div class="item-note" item-right>

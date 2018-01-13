@@ -13,14 +13,14 @@ export class GroundPlan {
 		this.presentToast();
     this.getBedrijven();
 	}
-	public tap: number = 400;
+	public tap: number = 1000;
 
 	tapEvent(e) {
-	    if (this.tap != 800) {
-	        this.tap = 800;
+	    if (this.tap != 1900) {
+	        this.tap = 1900;
 	    }
 	    else
-	        this.tap = 400;
+	        this.tap = 1000;
 	}
 
 	presentToast() {

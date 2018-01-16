@@ -4,6 +4,13 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Bedrijven</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="weergevenPopover($event)">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
@@ -14,7 +21,7 @@
   <ion-item>
     <ion-label>Opleidingen</ion-label>
     <ion-select (ionChange)="onOpleidingenChange($event)" [(ngModel)]="opleidingen" multiple="true" cancelText="Cancel" okText="Ok">
-      <ion-option value="Bedrijfsmanagement">Bedrijfsmanagement</ion-option>
+      <p style="border:1px solid #000;display:inline-block;position: absolute; margin:0 5px;"></p><ion-option value="Bedrijfsmanagement">Bedrijfsmanagement</ion-option>
       <ion-option value="Office Management">Office Management</ion-option>
       <ion-option value="Communicatie">Communicatie</ion-option>
       <ion-option value="ICT Multimedia">ICT Multimedia</ion-option>

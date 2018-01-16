@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
+import { SettingsPopover } from '../settings-popover/settings-popover';
 import * as $ from 'jquery';
 
 @Component({
@@ -11,11 +12,18 @@ import * as $ from 'jquery';
 export class ListPage {
   items: Array<{Bedrijf: string, E_mail: string, Contact: string, Adres: string, Post: string, Gemeente: string, Telefoon: string, Standnr: number, Sector: string, Opleiding: string, groen: string, geel: string, rood: string, blauw: string, wit: string, Kleur: Array<string>}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
     this.initializeItems();
     localStorage.setItem('searchVal', "");
     localStorage.setItem('oplVal', "");
   }
+
+  weergevenPopover(event) {
+		let popover = this.popoverCtrl.create(SettingsPopover);
+		popover.present({
+			ev: event
+		});
+	}
 
   initializeItems() {
     this.getBedrijven();

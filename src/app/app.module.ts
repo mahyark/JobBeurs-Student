@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { GroundPlan } from '../pages/GroundPlan/groundplan';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { SettingsPopover } from '../pages/settings-popover/settings-popover';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     GroundPlan,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    SettingsPopover
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     GroundPlan,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    SettingsPopover
   ],
   providers: [
     StatusBar,

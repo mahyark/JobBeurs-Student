@@ -41,19 +41,19 @@ export class ListPage {
             var Kleuren = new Array();
             if (this.items[i].groen=="WAAR"){
               Opleidingen.push("Bedrijfsmanagement Office Management Communicatie");
-              Kleuren.push("green");
+              Kleuren.push("#00C851");
             };
             if (this.items[i].geel=="WAAR"){
               Opleidingen.push("ICT Multimedia Grafische en Digitale Media");
-              Kleuren.push("yellow");
+              Kleuren.push("#fbc02d");
             };
             if (this.items[i].rood=="WAAR"){
               Opleidingen.push("Wetenschappen Techniek");
-              Kleuren.push("red");
+              Kleuren.push("#ff3547");
             };
             if (this.items[i].blauw=="WAAR"){
               Opleidingen.push("Toegepaste Informatica Electronica ICT");
-              Kleuren.push("blue");
+              Kleuren.push("#4285f4");
             };
             if (this.items[i].wit=="WAAR"){
               Opleidingen.push("Gezondheid Onderwijs");

@@ -13,8 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   templateUrl: 'app.html',
   template: `
   <ion-tabs>
-    <ion-tab tabIcon="map" tabTitle="Plattegrond" [root]="tab1"></ion-tab>
     <ion-tab tabIcon="search" tabTitle="Bedrijven" [root]="tab2"></ion-tab>
+    <ion-tab tabIcon="map" tabTitle="Plattegrond" [root]="tab1"></ion-tab>
   </ion-tabs>`
 })
 export class MyApp {
